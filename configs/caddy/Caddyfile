@@ -1,0 +1,7 @@
+https://{{server_name}} {  
+    log /var/log/caddy/access.log
+    proxy /mail 172.18.0.1:8085 {
+      websocket
+      header_upstream -Origin
+    }
+}
